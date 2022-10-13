@@ -1,0 +1,13 @@
+enum COLORS {
+  PRIMARY = '#0FB7B8',
+  WARNING = '#FFAD33',
+  DANGER = '#FF4B4B',
+  TEXT_GRAY = '#8080A6',
+  GRAY = '#EDEFF0',
+  LIGHT_GRAY = '#F6F7F8',
+  LIGHT = '#F8F9FA',
+  DARK_GRAY = '#B0B8CC',
+  DARK = '#292D32',
+}
+
+export default COLORS;
