@@ -1,4 +1,4 @@
-import App from 'App';
+import App from '../App';
 import React from 'react';
 import history from './history';
 import { Route, Routes, unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
