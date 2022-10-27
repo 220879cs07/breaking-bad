@@ -1,0 +1,26 @@
+@import 'assets/styles/variables.sass'
+  
+.episode-card
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .06) !important
+  position: relative
+  &__title
+    font: 2rem $sb
+    margin: 0 0 5px
+  &__date
+    font: 1.4rem $m
+    color: rgba($dark-blue, .6)
+  &__label
+    position: absolute
+    top: 10px
+    right: 10px
+    height: auto !important
+    font: 1.2rem $r !important
+    background: rgba(255,173,51,.08) !important
+    color: #ffad33 !important
+    span
+      padding: 4px 10px
+  &__characters
+    margin-top: 8px
+    font: 1.4rem $r
+    &-title
+      font: 1.5rem $m

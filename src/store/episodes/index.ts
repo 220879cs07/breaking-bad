@@ -4,6 +4,7 @@ import { EpisodesState } from './types';
 
 const initialState: EpisodesState = {
   episodes: [],
+  episodesLoading: true,
 };
 
 export const episodesSlice = createSlice({

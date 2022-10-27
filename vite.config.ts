@@ -1,11 +1,11 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
 import path from 'path';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000
+    port: 3000,
   },
   resolve: {
     alias: [
@@ -14,6 +14,7 @@ export default defineConfig({
       { find: 'assets', replacement: path.resolve(__dirname, 'src/assets') },
       { find: 'pages', replacement: path.resolve(__dirname, 'src/pages') },
       { find: 'shared', replacement: path.resolve(__dirname, 'src/shared') },
+      { find: 'store', replacement: path.resolve(__dirname, 'src/store') },
     ],
   },
 });
