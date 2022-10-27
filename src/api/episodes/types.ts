@@ -1,12 +1,12 @@
 import { EpisodeDetailedModel, EpisodeModel } from 'app/models/EpisodesModel';
 import { AxiosPromise } from 'axios';
 
-interface GetEpisodesParams {
+export interface GetEpisodesParams {
   series: string;
 }
 
 export interface GetEpisodes {
-  (params: GetEpisodesParams): AxiosPromise<EpisodeModel[]>;
+  (params?: GetEpisodesParams): AxiosPromise<EpisodeModel[]>;
 }
 
 export interface GetEpisodeById {
