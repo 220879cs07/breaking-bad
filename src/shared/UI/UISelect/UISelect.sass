@@ -1,0 +1,63 @@
+
+@import 'assets/styles/variables.sass'
+
+.select-v2
+  &__input
+    font: 1.5rem $m !important
+    height: 100% !important
+    padding: 0 10px !important
+    -webkit-text-fill-color: #000 !important
+    color: #000 !important
+    text-overflow: clip !important
+    &--search-disabled
+      caret-color: transparent
+    &--root
+      height: 45px
+      overflow: hidden
+      .MuiOutlinedInput-notchedOutline
+        border-radius: 11px
+  &__option[aria-selected="true"]
+    background: transparent !important
+  &__option
+    color: #000
+    font: 1.5rem $m !important
+    cursor: pointer
+    min-height: 40px
+    word-wrap: break-word
+    margin: 6px 5px
+    border-radius: 6px
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+    &:hover
+      background: #E9FAFF !important
+  &__clear-indicator
+    .MuiSvgIcon-root
+      width: 20px !important
+      height: 20px !important
+  &__popup-indicator
+    .MuiSvgIcon-root
+      width: 25px !important
+      height: 25px !important
+  & .MuiInputLabel-root
+    font: 1.4rem $m
+  legend
+    font-size: 1.1rem !important
+
+  &--product
+    .select-v2
+      &__input
+        &--root
+          .MuiOutlinedInput-notchedOutline
+            border: none !important
+            border-radius: 11px
+
+  &--invalid
+    .select-v2
+      &__input
+        &--root
+          background-color: #FDEFEF !important
+    .MuiOutlinedInput-notchedOutline
+      border-color: $danger !important
+      background-color: #FDEFEF !important

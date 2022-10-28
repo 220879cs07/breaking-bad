@@ -1,0 +1,84 @@
+@import 'assets/styles/variables.sass'
+
+.ui-button
+  font: 1.6rem/1 $sb
+  padding: 12px 20px
+  height: 47px
+
+  border-radius: 6px
+  // color: $dark-purple
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  text-align: center
+  border: 1px solid transparent
+  transition: .3s all
+  column-gap: 10px
+  text-decoration: none
+  &:not(.ui-button__fit-content)
+    min-width: 130px
+  &--primary
+    background: $primary
+    color: #fff
+  &--danger
+    background: rgba($danger, .1)
+    color: $danger
+  &--success
+    background: rgba($primary, .1)
+    color: $primary
+  &--warning
+    background: rgba($warning, .1)
+    color: $warning
+  &--secondary
+    background: $light-gray
+  &--white
+    background: $white
+    border-color: $gray
+  &--light-gray
+    background: #F6F7F8
+  // &__outline
+  //   background: transparent
+  &__square
+    border-radius: 6px
+  &__icon
+  &__loader-container
+    position: absolute
+    left: 50%
+    height: calc(100% + 3px)
+    width: calc(100% + 3px)
+    display: flex
+    align-items: center
+    justify-content: center
+    // background: rgba($new-gray, .85)
+    z-index: 1
+    transform: translateX(-50%)
+  &__loader
+    // color: $dark-purple !important
+    height: 30px !important
+    width: 30px !important
+  &__disabled
+    // background: rgba($new-gray-blue, .1)
+    // color: rgba($new-gray-blue, .9)
+    border-color: transparent
+  &__fluid
+    width: 100%
+  &--small
+    font-size: .8rem
+    font-family: $m
+    min-height: 25px
+
+  &__loading
+    opacity: .7
+
+  &__filter-count
+    position: absolute
+    top: -8px
+    right: -8px
+    width: 20px
+    height: 20px
+    font: 1.4rem $sb
+    line-height: 2rem
+    border-radius: 50%
+    background: $primary
+    color: $white
