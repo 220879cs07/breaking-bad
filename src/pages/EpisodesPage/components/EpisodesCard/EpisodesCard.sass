@@ -1,8 +1,12 @@
 @import 'assets/styles/variables.sass'
   
 .episode-card
+  min-height: 220px
+  padding: 24px
   box-shadow: 0 4px 8px rgba(0, 0, 0, .06) !important
   position: relative
+  background: $white
+  border-radius: 6px
   &__title
     font: 2rem $sb
     margin: 0 0 5px
@@ -24,3 +28,11 @@
     font: 1.4rem $r
     &-title
       font: 1.5rem $m
+
+  &__more
+    font: 1.4rem $m
+    color: $blue
+
+  &__footer
+    position: absolute
+    bottom: 24px
