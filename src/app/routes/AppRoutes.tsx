@@ -5,6 +5,7 @@ import history from './history';
 
 // Pages
 import EpisodesPage from 'pages/EpisodesPage/EpisodesPage';
+import EpisodeDetailsPage from 'pages/EpisodeDetailsPage/EpisodeDetailsPage';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const AppRoutes: React.FC = () => {
       <App>
         <Routes>
           <Route path='/' element={<EpisodesPage />} />
+          <Route path='/episodes/:id' element={<EpisodeDetailsPage />} />
         </Routes>
       </App>
     </HistoryRouter>

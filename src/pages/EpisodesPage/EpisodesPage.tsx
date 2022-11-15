@@ -25,16 +25,13 @@ const EpisodesPage: React.FC = () => {
     if (!episodes.length) return setSeasonsCount([]);
 
     const uniqueEpisodesBySeason = _.unionBy(episodes, (i) => i.season.trim()).map((i) => i.season);
-
     setSeasonsCount(uniqueEpisodesBySeason);
     setCurrentSeason(uniqueEpisodesBySeason[0]);
   }, [episodes]);
 
   useEffect(() => {
-    if (!currentSeason?.length) return;
-
     setFilteredEpisodes(episodes.filter((episode) => episode.season.trim() === currentSeason));
-  }, [currentSeason]);
+  }, [currentSeason, episodes]);
 
   return (
     <div className='episodes-page'>
