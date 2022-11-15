@@ -3,11 +3,11 @@ import React from 'react';
 import './WithLoading.sass';
 
 interface Props extends CircularProgressProps {
-  loading: boolean;
+  loading?: boolean;
   children: React.ReactNode;
 }
 
-const WithLoading: React.FC<Props> = ({ loading, children, ...rest }) => {
+const WithLoading: React.FC<Props> = ({ loading = true, children, ...rest }) => {
   if (loading) {
     return (
       <div className='loader__container'>

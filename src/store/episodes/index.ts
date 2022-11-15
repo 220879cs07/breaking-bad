@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getEpisodes } from './actions';
+import { getEpisodes, getEpisodeById } from './actions';
 import { EpisodesState } from './types';
 
 const initialState: EpisodesState = {
@@ -20,6 +20,14 @@ export const episodesSlice = createSlice({
       .addCase(getEpisodes.fulfilled, (state, action) => {
         state.episodesLoading = false;
         state.episodes = action.payload;
+      })
+      .addCase(getEpisodeById.pending, (state) => {
+        state.currentEpisodeLoading = true;
+        state.currentEpisode = undefined;
+      })
+      .addCase(getEpisodeById.fulfilled, (state, action) => {
+        state.currentEpisodeLoading = false;
+        state.currentEpisode = action.payload;
       });
   },
 });

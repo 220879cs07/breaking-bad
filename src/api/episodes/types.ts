@@ -10,5 +10,5 @@ export interface GetEpisodes {
 }
 
 export interface GetEpisodeById {
-  (id: number): AxiosPromise<EpisodeDetailedModel>;
+  (id: number): AxiosPromise<EpisodeDetailedModel[]>;
 }

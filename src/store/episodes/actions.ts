@@ -4,9 +4,16 @@ import { GetEpisodesParams } from 'api/episodes/types';
 import { RootState } from 'store/store';
 import { EpisodesState } from './types';
 
-export const getEpisodes = createAsyncThunk('episodes/getEpisodes', async (payload: { params?: GetEpisodesParams; force?: boolean } | undefined, ThunkApi) => {
-  const { episodes } = (ThunkApi.getState() as RootState).episodes as EpisodesState;
-  if (episodes?.length && !payload?.force) return episodes;
+export const getEpisodes = createAsyncThunk(
+  'episodes/getEpisodes',
+  async (payload: { params?: GetEpisodesParams; force?: boolean } | undefined, ThunkApi) => {
+    const { episodes } = (ThunkApi.getState() as RootState).episodes as EpisodesState;
+    if (episodes?.length && !payload?.force) return episodes;
 
-  return await episodesService.getEpisodes(payload?.params).then(({ data }) => data);
+    return await episodesService.getEpisodes(payload?.params).then(({ data }) => data);
+  }
+);
+
+export const getEpisodeById = createAsyncThunk('episodes/getEpisodeById', async (episodeId: number) => {
+  return await episodesService.getEpisodeById(episodeId).then(({ data }) => data[0]);
 });
