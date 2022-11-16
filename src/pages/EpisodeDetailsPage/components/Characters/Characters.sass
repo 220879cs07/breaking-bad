@@ -1,0 +1,33 @@
+@import 'assets/styles/variables.sass'
+  
+.episode-characters
+  background: $white
+  padding: 20px
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  gap: 18px
+
+  &__card
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15)
+    border-radius: 8px
+    overflow: hidden
+    &-content
+      padding: 12px 12px 20px
+    &-image
+      width: 100%
+      object-fit: cover
+    &-name
+      font: 2rem $m
+      color: $dark
+      display: inlone-block
+      transition: all .15s ease
+      &:hover
+        text-decoration: none
+        color: $warning
+    &-date
+      color: $text-gray
+      font: 1.4rem $m
+      margin-top: 3px
+
+  
+  

@@ -4,8 +4,11 @@ import React, { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import BackButton from 'shared/BackButton/BackButton';
 import SingleDetail from 'shared/SingleDetail/SingleDetail';
+import UITabs from 'shared/UI/UITabs/UITabs';
 import WithLoading from 'shared/WithLoading/WithLoading';
 import { getEpisodeById } from 'store/episodes/actions';
+import Characters from './components/Characters/Characters';
+import Deaths from './components/Deaths/Deaths';
 import './EpisodeDetailsPage.sass';
 
 interface Props {}
@@ -17,9 +20,7 @@ const EpisodeDetailsPage: FC<Props> = () => {
   const { currentEpisode, currentEpisodeLoading } = useAppSelector((state) => state.episodes);
 
   useEffect(() => {
-    if (!id) return;
-
-    dispatch(getEpisodeById(+id));
+    if (id) dispatch(getEpisodeById(+id));
   }, [id]);
 
   return (
@@ -33,6 +34,13 @@ const EpisodeDetailsPage: FC<Props> = () => {
             <SingleDetail title='Episode' label={`${currentEpisode.episode}`} />
             <SingleDetail title='Season' label={`${currentEpisode.season}`} />
           </div>
+          <UITabs
+            className='episode-details__tabs'
+            tabs={[
+              { label: 'Characters', tab: 'characters', component: <Characters /> },
+              { label: 'Deaths', tab: 'deaths', component: <Deaths /> },
+            ]}
+          />
         </div>
       )}
     </WithLoading>
