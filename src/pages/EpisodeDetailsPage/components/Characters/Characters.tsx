@@ -1,4 +1,3 @@
-import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mui/material';
 import { formatDate } from 'app/helpers/formatDate';
 import { useAppSelector } from 'app/hooks';
 import { CharacterModel } from 'app/models/CharacterModel';
